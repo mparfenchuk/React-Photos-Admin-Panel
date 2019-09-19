@@ -27,8 +27,6 @@ function* requestAddItem(action: TriggerAddItem) {
         successToast(toastId, `${action.payload.title} added successfully.`)
     } catch(e) {
         errorToast(toastId, e.message)
-    } finally {
-        yield put(addItemRoutine.fulfill());
     }
 }
 
@@ -43,8 +41,6 @@ function* requestUpdateItem(action: TriggerUpdateItem) {
         successToast(toastId, `${action.payload.title} updated successfully.`)
     } catch(e) {
         errorToast(toastId, e.message)
-    } finally {
-        yield put(updateItemRoutine.fulfill());
     }
 }
 
@@ -61,8 +57,6 @@ function* requestDeleteItem(action: TriggerDeleteItem) {
         successToast(toastId, `${action.payload.title} deleted successfully.`)
     } catch(e) {
         errorToast(toastId, e.message)
-    } finally {
-        yield put(deleteItemRoutine.fulfill());
     }
 }
 

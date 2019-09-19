@@ -31,12 +31,7 @@ const reducer = (state = initialState, action: Actions): State => {
             ...state,
             error: action.payload.error
         }
-    } else if ([
-        getItemsRoutine.FULFILL, 
-        addItemRoutine.FULFILL, 
-        updateItemRoutine.FULFILL, 
-        deleteItemRoutine.FULFILL
-    ].includes(action.type)) {
+    } else if (getItemsRoutine.FULFILL === action.type) {
         return {
             ...state,
             loading: false

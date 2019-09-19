@@ -12,22 +12,16 @@ const getItemsRoutine = createRoutine('GET_ITEMS', {
 const addItemRoutine = createRoutine('ADD_ITEM', { 
     trigger: (item: Item) => item,
     success: (paginatedItems: Pagination) => ({ paginatedItems }),
-    failure: () => null,
-    fulfill: () => null,
 });
 
 const updateItemRoutine = createRoutine('UPDATE_ITEM', { 
     trigger: (item: Item) => item,
     success: (paginatedItems: Pagination) => ({ paginatedItems }),
-    failure: () => null,
-    fulfill: () => null,
 });
 
 const deleteItemRoutine = createRoutine('DELETE_ITEM', { 
     trigger: (item: Item) => item,
     success: (paginatedItems: Pagination) => ({ paginatedItems }),
-    failure: () => null,
-    fulfill: () => null,
 });
 
 export {
