@@ -1,9 +1,9 @@
-import { put, takeEvery, all, fork, delay, select } from 'redux-saga/effects';
+import { put, takeEvery, delay, select } from 'redux-saga/effects';
 
 import { getItemsRoutine, addItemRoutine, updateItemRoutine, deleteItemRoutine } from './routines';
 import { TriggerAddItem, TriggerDeleteItem, TriggerGetItems, TriggerUpdateItem } from './types';
-import { getItems, addItem, updateItem, deleteItem } from './storage';
-import { infoToast, successToast, errorToast } from './toasts';
+import { getItems, addItem, updateItem, deleteItem } from '../utils/storage';
+import { infoToast, successToast, errorToast } from '../utils/toasts';
 
 function* requestGetItems(action: TriggerGetItems) {
     try {
@@ -60,29 +60,11 @@ function* requestDeleteItem(action: TriggerDeleteItem) {
     }
 }
 
-function* watchGetItems() {
-    yield takeEvery(getItemsRoutine.TRIGGER, requestGetItems);
-}
-
-function* watchAddItem() {
-    yield takeEvery(addItemRoutine.TRIGGER, requestAddItem);
-}
-
-function* watchUpdateItem() {
-    yield takeEvery(updateItemRoutine.TRIGGER, requestUpdateItem);
-}
-
-function* watchDeleteItem() {
-    yield takeEvery(deleteItemRoutine.TRIGGER, requestDeleteItem);
-}
-
 const rootSaga = function* root() {
-    yield all([
-        fork(watchGetItems),
-        fork(watchAddItem),
-        fork(watchUpdateItem),
-        fork(watchDeleteItem)
-    ])
+    yield takeEvery(getItemsRoutine.TRIGGER, requestGetItems)
+    yield takeEvery(addItemRoutine.TRIGGER, requestAddItem)
+    yield takeEvery(updateItemRoutine.TRIGGER, requestUpdateItem)
+    yield takeEvery(deleteItemRoutine.TRIGGER, requestDeleteItem)
 }
 
 export default rootSaga;

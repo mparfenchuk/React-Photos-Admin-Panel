@@ -15,8 +15,8 @@ import DeleteIcon from '@material-ui/icons/Delete';
 
 import { updateItemRoutine, deleteItemRoutine } from '../ducks/routines';
 import { TriggerUpdateItem, TriggerDeleteItem, Item } from '../ducks/types';
-import { tooltipPositions } from '../ducks/tooltipPositions';
-import { validation } from '../ducks/validation';
+import { tooltipPositions } from '../utils/tooltipPositions';
+import { validation } from '../utils/validation';
 
 import ColorPicker from './ColorPicker';
 import Dropzone from './Dropzone';

@@ -7,7 +7,7 @@ import FormControl from '@material-ui/core/FormControl';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
-import { apiCall } from '../ducks/emulateUploading';
+import { apiCall } from '../utils/emulateUploading';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({

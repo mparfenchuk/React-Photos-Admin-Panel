@@ -14,7 +14,7 @@ import Grid from '@material-ui/core/Grid';
 
 import { getItemsRoutine } from '../ducks/routines';
 import { State, Item, TriggerGetItems } from '../ducks/types';
-import { initializeItem } from '../ducks/initializeItem';
+import { initializeItem } from '../utils/initializeItem';
 
 import CreateItemDialog from './CreateItemDialog';
 import UpdateItemDialog from './UpdateItemDialog';

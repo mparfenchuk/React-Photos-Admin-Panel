@@ -13,9 +13,9 @@ import TextField from '@material-ui/core/TextField';
 
 import { addItemRoutine } from '../ducks/routines';
 import { TriggerAddItem, Item } from '../ducks/types';
-import { tooltipPositions } from '../ducks/tooltipPositions';
-import { validation } from '../ducks/validation';
-import { initializeItem } from '../ducks/initializeItem';
+import { tooltipPositions } from '../utils/tooltipPositions';
+import { validation } from '../utils/validation';
+import { initializeItem } from '../utils/initializeItem';
 
 import ColorPicker from './ColorPicker';
 import Dropzone from './Dropzone';

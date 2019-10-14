@@ -59,9 +59,9 @@ interface TooltipProps {
 
 const Tooltip: React.FC<TooltipProps> = ({ 
     children, 
-    position = 'top', 
-    color = '#000000', 
-    title = 'Tooltip'
+    position, 
+    color, 
+    title
 }) => {
     const classes = useStyles({ color })
     const [visibility, setVisibility] = useState<boolean>(false)
